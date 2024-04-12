@@ -11,6 +11,11 @@ public class DatabaseConnection {
     private static final String user = "postgres";
     private static final String password = "Malachiw1!";
 
+    /**
+     * retrieves a connection to the database.
+     *
+     * @return         	the database connection
+     */
     public static Connection getCon(){
         Connection connection = null;
         try{

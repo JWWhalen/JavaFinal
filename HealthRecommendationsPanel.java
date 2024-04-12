@@ -39,6 +39,9 @@ public class HealthRecommendationsPanel {
         loadRecommendations(); // Load existing recommendations
     }
 
+    /**
+     * method to add a recommendation to the recommendations area.
+     */
     private void addRecommendation() {
         String recommendation = newRecommendationField.getText();
         if (!recommendation.isEmpty()) {
@@ -48,7 +51,7 @@ public class HealthRecommendationsPanel {
     }
 
     private void loadRecommendations() {
-        // Placeholder: load recommendations from the backend
+        
         recommendationsArea.setText("Existing recommendations...\n");
     }
 

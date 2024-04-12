@@ -24,11 +24,15 @@ public class PatientHealthDataPanel {
         panel.add(backButton, BorderLayout.SOUTH);
         backButton.addActionListener(e -> mainApp.switchPanel("DoctorPatients"));
 
-        loadHealthData(); // Load health data from the backend
+        loadHealthData(); // loading health data from the backend
     }
 
+    /**
+     * a description of the entire Java function.
+     *
+     */
     private void loadHealthData() {
-        // Placeholder: Load health data here
+        // placeholder: Load health data here
         healthDataArea.setText("Patient's health data...");
     }
 

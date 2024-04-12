@@ -7,7 +7,7 @@ public class HealthData {
     private int heartRate;
     private String date;
 
-    // Constructor, getters, and setters
+    // constructour, getters, and setters
     public HealthData(int id, int userId, double weight, double height, int steps, int heartRate, String date) {
         this.id = id;
         this.userId = userId;
@@ -18,36 +18,53 @@ public class HealthData {
         this.date = date;
     }
 
+    /**
+     * Get the ID of the object.
+     *
+     * @return         the ID of the object
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * get the user ID.
+     *
+     * @return    the user ID
+     */
     public int getUserId() {
         return userId;
     }
 
+   
     public double getWeight() {
         return weight;
     }
 
+    /**
+     * Get the height of the object.
+     *
+     * @return     he height of the object
+     */
     public double getHeight() {
         return height;
     }
 
+    
     public int getSteps() {
-        return steps;
+        return steps;//get the number of steps
     }
 
     public int getHeartRate() {
-        return heartRate;
+        return heartRate;//get the number of heart rate
     }
 
     public String getDate() {
-        return date;
+        return date;//get the date
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.id = id;//set the id
     }
 
     public void setUserId(int userId) {

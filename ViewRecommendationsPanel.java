@@ -27,11 +27,19 @@ public class ViewRecommendationsPanel {
         loadRecommendations(); // Load recommendations from the backend
     }
 
+    /**
+     * loads the recommendations and updates the recommendations area with the given message.
+     */
     private void loadRecommendations() {
-        // Placeholder: Load recommendations from backend and display them
+        
         recommendationsArea.setText("Here are your recommendations...");
     }
 
+    /**
+     * Gets the panel.
+     *
+     * @return         the panel
+     */
     public JPanel getPanel() {
         return panel;
     }

@@ -22,6 +22,11 @@ public class MedicineReminder {
         return userId;
     }
 
+    /**
+     * gets the midicine name.
+     *
+     * @return         	the medicine name
+     */
     public String getMedicineName() {
         return medicineName;
     }
@@ -42,6 +47,4 @@ public class MedicineReminder {
         return endDate;
     }
 
-    // Setters (if you need to modify the fields after object creation)
-    // Note: Implement setters here if your application requires modifying these fields post object creation.
 }

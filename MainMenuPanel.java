@@ -32,6 +32,11 @@ public class MainMenuPanel {
         logoutButton.addActionListener(e -> mainApp.switchPanel("Login"));
     }
 
+    /**
+     * a description of the entire Java function.
+     *
+     * @return         	description of return value
+     */
     public JPanel getPanel() {
         return panel;
     }

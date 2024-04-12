@@ -11,6 +11,12 @@ public class MedicineReminderManager {
     public MedicineReminderManager() {
     }
 
+    /**
+     * aadds a reminder to the medicine_reminders table in the database.
+     *
+     * @param  reminder   the MedicineReminder object to be added
+     * @return            true if the reminder is successfully added, false otherwise
+     */
     public boolean addReminder(MedicineReminder reminder) {
         String query = "INSERT INTO medicine_reminders (user_id, medicine_name, dosage, schedule, start_date, end_date) VALUES (?, ?, ?, ?, ?, ?)";
         try (Connection con = DatabaseConnection.getCon();
@@ -21,7 +27,7 @@ public class MedicineReminderManager {
             ps.setString(3, reminder.getDosage());
             ps.setString(4, reminder.getSchedule());
     
-            // Convert String to java.sql.Date
+            // convert String to java.sql.Date objects 
             java.sql.Date startDate = java.sql.Date.valueOf(reminder.getStartDate());
             java.sql.Date endDate = java.sql.Date.valueOf(reminder.getEndDate());
     

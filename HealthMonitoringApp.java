@@ -9,6 +9,11 @@ public class HealthMonitoringApp {
     private static UserDao userDao = new UserDao();
     private static DoctorPortalDao doctorPortalDao = new DoctorPortalDao();
 
+    /**
+     * Main method to run the Health Monitoring System application.
+     * @param  args aray of command-line arguments passed to the program
+     * @return     void, no return value
+     */
     public static void main(String[] args) {
         DatabaseConnection databaseConnection = new DatabaseConnection();
         Scanner scanner = new Scanner(System.in);
@@ -38,7 +43,7 @@ public class HealthMonitoringApp {
             }
         }
     }
-
+    
     public static void registerUser(Scanner scanner) {
         System.out.println("Register: ");
         System.out.println("-------------------------------");
@@ -55,7 +60,7 @@ public class HealthMonitoringApp {
         User user = new User(first_name, last_name, email, password, is_doctor);
         userDao.createUser(user);
     }
-
+    
     public static void testLoginUser(Scanner scanner) {
         System.out.println("Log In: ");
         System.out.println("-------------------------------");
@@ -114,6 +119,11 @@ public class HealthMonitoringApp {
             }
         }
     }
+    /**
+     * Doctor logged in options
+     * @param scanner
+     * @param doctorId
+     */
     public static void doctorLoggedInOptions(Scanner scanner, int doctorId) {
         while (true) {
             System.out.println("Select an option:");

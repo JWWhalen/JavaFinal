@@ -14,6 +14,12 @@ public class DoctorPortalDao {
         healthDataDao = new HealthDataDao();
     }
 
+    /**
+     * retrieves a doctor from the database based on the provided doctorId.
+     *
+     * @param  doctorId   the unique identifier of the doctor
+     * @return           the Doctor object corresponding to the doctorId, or null if not found
+     */
     public Doctor getDoctorById(int doctorId) {
         Doctor doctor = null;
         String query = "SELECT * FROM doctors WHERE id = ?";
@@ -33,15 +39,16 @@ public class DoctorPortalDao {
         }
         return doctor;
     }
-    public class DoctorPatientRelationship {
-        private int doctorId;
-        private int patientId;
     
-        public DoctorPatientRelationship(int doctorId, int patientId) {
+    public class DoctorPatientRelationship { 
+        private int doctorId;//doctor
+        private int patientId;//patent
+      
+        public DoctorPatientRelationship(int doctorId, int patientId) { 
             this.doctorId = doctorId;
             this.patientId = patientId;
         }
-    
+        
         public int getDoctorId() {
             return doctorId;
         }
@@ -84,11 +91,11 @@ public class DoctorPortalDao {
              PreparedStatement deletePs = con.prepareStatement(deleteQuery);
              PreparedStatement insertPs = con.prepareStatement(insertQuery)) {
             
-            // First, delete existing recommendations for the patient
+            //delete existing recommendations for the patient
             deletePs.setInt(1, userId);
             deletePs.executeUpdate();
             
-            // Insert new recommendations
+            // insert new recommendations
             for (String recommendation : recommendations) {
                 insertPs.setInt(1, userId);
                 insertPs.setString(2, recommendation);
@@ -96,10 +103,10 @@ public class DoctorPortalDao {
             }
             insertPs.executeBatch();
             
-            return true; // Operation succeeded
+            return true;
         } catch (SQLException e) {
             e.printStackTrace();
-            return false; // Operation failed
+            return false;
         }
     }
     public boolean assignPatientToDoctor(int patientId, int doctorId) {

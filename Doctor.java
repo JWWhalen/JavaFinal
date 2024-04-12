@@ -9,19 +9,35 @@ public class Doctor extends User{
         this.specialization = specialization;
     }
 
-    // Getters and setters for the new properties
+    // geters and setters
     public String getMedicalLicenseNumber() {
         return medicalLicenseNumber;
     }
 
+    /**
+     * Sets the medical license number.
+     *
+     * @param  medicalLicenseNumber  the medical license number to set
+     * @return                       void
+     */
     public void setMedicalLicenseNumber(String medicalLicenseNumber) {
         this.medicalLicenseNumber = medicalLicenseNumber;
     }
 
+    /**
+     * get the specialization of the object.
+     *
+     * @return         	the specialization of the object
+     */
     public String getSpecialization() {
         return specialization;
     }
 
+    /**
+     * set the specialization of the object.
+     *
+     * @param  specialization   the specialization to set
+     */
     public void setSpecialization(String specialization) {
         this.specialization = specialization;
     }

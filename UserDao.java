@@ -11,11 +11,11 @@ public class UserDao {
         /* insert user into database */
         String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
 
-        // Prepare the SQL query
+        // prepare the SQL query
         String query = "INSERT INTO users (first_name, last_name, email, password, is_doctor) " +
                 "VALUES (?, ?, ?, ?, ?)";
 
-        // Database logic to insert data using PREPARED Statement
+        // database logic to insert data using PREPARED Statement
         try {
             Connection con = DatabaseConnection.getCon();
             PreparedStatement statement = con.prepareStatement(query);
@@ -42,10 +42,10 @@ public class UserDao {
         String password = null;
         boolean is_doctor = false;
 
-        // Prepare the SQL query
+        // lrepare the SQL query
         String query = "SELECT * FROM users WHERE id = ?";
 
-        // Database logic to get data by ID Using Prepared Statement
+        // database logic to get data by ID Using Prepared Statement
         try {
             Connection con = DatabaseConnection.getCon();
             PreparedStatement statement = con.prepareStatement(query);
@@ -73,10 +73,10 @@ public class UserDao {
         String password = null;
         boolean is_doctor = false;
 
-        // Prepare the SQL query
+        // prepare the SQL query
         String query = "SELECT * FROM users WHERE email = ?";
 
-        // Database logic to get data by ID Using Prepared Statement
+        // database logic to get data by ID Using Prepared Statement
         try {
             Connection con = DatabaseConnection.getCon();
             PreparedStatement statement = con.prepareStatement(query);
@@ -99,13 +99,13 @@ public class UserDao {
 
     public boolean updateUser(User user) {
         boolean bool = false;
-        // Prepare the SQL query
+        // pepare the SQL query
         String query = "UPDATE users " +
                 "SET first_name = ?, last_name = ?, email = ?, password = ?, is_doctor = ? " +
                 "WHERE id = ?";
         String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
 
-        // Database logic to get update user Using Prepared Statement
+        // database logic to get update user Using Prepared Statement
         try {
             Connection con = DatabaseConnection.getCon();
             PreparedStatement statement = con.prepareStatement(query);
@@ -127,10 +127,10 @@ public class UserDao {
 
     public boolean deleteUser(int id) { /* delete user from the database */
         boolean bool = false;
-        // Prepare the SQL query
+        // prepare the SQL query
         String query = "DELETE FROM users WHERE id = ?";
 
-        // Database logic to delete user
+        // dtabase logic to delete user
         try {
             Connection con = DatabaseConnection.getCon();
             PreparedStatement statement = con.prepareStatement(query);
@@ -145,10 +145,17 @@ public class UserDao {
         return bool;
     }
 
+    /**
+     * a method to verify the password for a given email using Bcrypt.
+     *
+     * @param  email     the email of the user
+     * @param  password  the password to verify
+     * @return          true if the password is verified, false otherwise
+     */
     public static boolean verifyPassword (String email, String password){
         boolean bool = false;
         String query = "SELECT password FROM users WHERE email = ?";
-        //Implement logic to retrieve password using the Bcrypt
+        // check if password is correct
         try {
             Connection con = DatabaseConnection.getCon();
             PreparedStatement statement = con.prepareStatement(query);

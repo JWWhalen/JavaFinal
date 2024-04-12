@@ -25,6 +25,12 @@ public class User {
         this.isDoctor = isDoctor;
     }
 
+    /**
+     * a description of the entire Java function.
+     *
+     * @param  paramName	description of parameter
+     * @return         	description of return value
+     */
     public int getId() {
         return id;
     }

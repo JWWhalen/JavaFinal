@@ -46,10 +46,15 @@ public class HealthDataEntryPanel {
     }
 
     private void submitHealthData() {
-        // Logic to process and save health data
+        // logic to process and save health data
         JOptionPane.showMessageDialog(panel, "Health Data Submitted");
     }
 
+    /**
+     * a description of the entire Java function.
+     *
+     * @return         description of return value
+     */
     public JPanel getPanel() {
         return panel;
     }

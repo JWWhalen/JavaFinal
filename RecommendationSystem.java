@@ -21,24 +21,30 @@ public class RecommendationSystem {
     private static final double MAX_BMI = 24.9;
     private static final int MIN_STEPS = 10000;
 
+    /**
+     * generates health recommendations based on the provided health data.
+     *
+     * @param  healthData   the health data used to generate recommendations
+     * @return              a list of health recommendations
+     */
     public List<String> generateRecommendations(HealthData healthData) {
         List<String> recommendations = new ArrayList<>();
 
-        // Analyze heart rate
+        // analyze heart rate
         int heartRate = healthData.getHeartRate();
         if (heartRate < MIN_HEART_RATE) {
             recommendations.add("Your heart rate is lower than the recommended range. " +
                     "Consider increasing your physical activity to improve your cardiovascular health.");
         }
 
-        // Analyze steps
+        // analyze steps
         int steps = healthData.getSteps();
         if (steps < MIN_STEPS) {
             recommendations.add("You're not reaching the recommended daily step count. " +
                     "Try to incorporate more walking or other physical activities into your daily routine.");
         }
         
-        // BMI Analysis (simplistic approach)
+        // BMI analysis (simplistic approach)
         double heightInMeters = healthData.getHeight() / 100; // Assuming height is in cm
         double bmi = healthData.getWeight() / (heightInMeters * heightInMeters);
         if (bmi < MIN_BMI) {

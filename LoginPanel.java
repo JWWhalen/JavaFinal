@@ -35,9 +35,15 @@ public class LoginPanel {
         registerButton.addActionListener(e -> mainApp.switchPanel("Register"));
     }
 
+    /**
+     * a method to perform the login process.
+     *
+     * @param  paramName   description of parameter
+     * @return             description of return value
+     */
     private void performLogin() {
         String email = emailField.getText();
-        char[] password = passwordField.getPassword();  // Using JPasswordField here.
+        char[] password = passwordField.getPassword();
         if (email == null || password.length == 0) {
             JOptionPane.showMessageDialog(panel, "Email or password cannot be empty.");
             return;
@@ -45,7 +51,7 @@ public class LoginPanel {
         
         if (UserDao.verifyPassword(email, new String(password))) {
             JOptionPane.showMessageDialog(panel, "Login Successful");
-            mainApp.switchPanel("MainMenu");  // Assuming there is a MainMenu panel
+            mainApp.switchPanel("MainMenu");
         } else {
             JOptionPane.showMessageDialog(panel, "Login Failed. Please try again.");
         }

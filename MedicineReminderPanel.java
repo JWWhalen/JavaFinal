@@ -6,12 +6,13 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+
 public class MedicineReminderPanel {
     private JPanel panel;
     private JTextField medicineNameField, dosageField, scheduleField, startDateField, endDateField;
     private JButton setReminderButton, backButton;
     private HealthMonitoringAppGUI mainApp;
-
+    
     public MedicineReminderPanel(HealthMonitoringAppGUI app) {
         mainApp = app;
         panel = new JPanel(new GridLayout(6, 2));
@@ -45,11 +46,19 @@ public class MedicineReminderPanel {
         backButton.addActionListener(e -> mainApp.switchPanel("MainMenu"));
     }
 
+    /**
+     * logic to process and save medicine reminder
+     */
     private void setMedicineReminder() {
         // Logic to process and save medicine reminder
         JOptionPane.showMessageDialog(panel, "Medicine Reminder Set");
     }
 
+    /**
+     * a description of the entire Java function.
+     *
+     * @return         description of return value
+     */
     public JPanel getPanel() {
         return panel;
     }

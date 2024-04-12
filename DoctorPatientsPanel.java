@@ -32,12 +32,23 @@ public class DoctorPatientsPanel {
         loadPatients(listModel);  // Load patient list from the backend
     }
 
+    /**
+     * a description of the entire Java function.
+     *
+     * @param  listModel	description of parameter
+     */
     private void loadPatients(DefaultListModel<String> listModel) {
         // Example patients, replace with real data retrieval
         listModel.addElement("Patient 1 - ID: 123");
         listModel.addElement("Patient 2 - ID: 456");
     }
 
+    /**
+     * view the health data of the selected patient.
+     *
+     * @param  paramName	description of parameter
+     * @return         	description of return value
+     */
     private void viewPatientHealthData() {
         String selectedPatient = patientList.getSelectedValue();
         if (selectedPatient != null) {
@@ -47,6 +58,11 @@ public class DoctorPatientsPanel {
         }
     }
 
+    /**
+     * retrieves the JPanel object.
+     *
+     * @return         	the JPanel object
+     */
     public JPanel getPanel() {
         return panel;
     }

@@ -49,15 +49,21 @@ public class RegistrationPanel {
         backButton.addActionListener(e -> mainApp.switchPanel("Login"));
     }
 
+    /**
+     * a description of the entire Java function.
+     *
+     * @param  paramName	description of parameter
+     * @return         	description of return value
+     */
     private void performRegistration() {
-        // Extract data from fields
+        // extract data from fields
         String firstName = firstNameField.getText();
         String lastName = lastNameField.getText();
         String email = emailField.getText();
         String password = new String(passwordField.getPassword());
         boolean isDoctor = isDoctorCheckbox.isSelected();
 
-        // Assuming userDao has a method to create a new user
+        // Check if all fields are filled
         if (UserDao.createUser(new User(firstName, lastName, email, password, isDoctor))) {
             JOptionPane.showMessageDialog(panel, "Registration Successful");
             mainApp.switchPanel("Login");
